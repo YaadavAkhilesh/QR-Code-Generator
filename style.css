@@ -1,0 +1,144 @@
+/* Default Light Theme */
+:root {
+    --background-color: #f0f2f5;
+    --container-bg-color: #ffffff;
+    --text-color: #333;
+    --button-color: #007bff;
+    --button-hover-color: #0056b3;
+    --input-border-color: #ddd;
+    --download-btn-color: #28a745;
+    --download-btn-hover-color: #218838;
+    --neon-color: #0ff; /* Color for neon glow */
+    --neon-secondary-color: #ff00ff; /* Secondary neon color */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    background: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.theme-toggle button:hover {
+    background: #333;
+}
+
+.container {
+    width: 400px;
+    padding: 30px;
+    background-color: var(--container-bg-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px var(--neon-color);
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid var(--input-border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--button-color);
+    box-shadow: 0 0 10px var(--neon-color), 0 0 20px var(--neon-secondary-color);
+}
+
+button {
+    width: 94%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0 0 10px var(--neon-color), 0 0 20px var(--neon-secondary-color);
+}
+
+.download-btn {
+    margin-top: 15px;
+    background-color: var(--download-btn-color);
+}
+
+.download-btn:hover {
+    background-color: var(--download-btn-hover-color);
+    box-shadow: 0 0 10px var(--neon-color), 0 0 20px var(--neon-secondary-color);
+}
+
+#qrcode {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f7f9fc;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+body.neon-theme {
+    --background-color: #000;
+    --container-bg-color: rgba(0, 0, 0, 0.8);
+    --text-color: #0ff;
+    --button-color: #ff00ff;
+    --button-hover-color: #ff4dff;
+    --input-border-color: #0ff;
+    --download-btn-color: #0ff;
+    --download-btn-hover-color: #1affff;
+    background: radial-gradient(circle, #0ff, #ff00ff);
+    animation: neon-background 10s infinite alternate;
+}
+
+@keyframes neon-background {
+    0% {
+        background: radial-gradient(circle, #0ff, #ff00ff);
+    }
+    100% {
+        background: radial-gradient(circle, #ff00ff, #0ff);
+    }
+}
